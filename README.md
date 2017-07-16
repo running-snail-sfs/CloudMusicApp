@@ -24,11 +24,11 @@ npm run dev //服务端运行 访问 http://localhost:8080
 - [x]   实现歌单，歌手图片信息的懒加载问题
 - [x]   实现数据请求延迟的lodding效果
 ## 运行截图
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/img/test1.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/img/test2.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/img/test3.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/img/test4.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/img/test5.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/img/test6.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/img/test7.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test1.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test2.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test3.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test4.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test5.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test6.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test7.png)
 

@@ -8,7 +8,8 @@ cd MusicWebApp
 npm install
 
 npm run dev //服务端运行 访问 http://localhost:8080
-
+## 技术栈
+vue+vuex+router+axios+jsonp+es6+stylus 目前还没用到vue的前端ui组件库，打算看下vux听说这个ui组件库挺好
 ## demo实现功能
 
 - [x]   通过jsonp真实获取qq音乐的数据
@@ -31,4 +32,5 @@ npm run dev //服务端运行 访问 http://localhost:8080
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test5.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test6.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test7.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test8.png)
 

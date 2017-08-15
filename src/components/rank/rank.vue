@@ -1,154 +1,123 @@
 <template>
-  <transition name="slide">
-  <div class="rank-detail">
-    <div class="header">
-
-        <div class="back-inco"></div>
-        <span class="back-title" @click="back">返回</span>
-        排行榜详情
-
-    </div>
-    <Scroll class="topList-item" :data="songList">
-      <div>
-      <ul>
-        <li v-for="(item,index) in songList" class="topList" @click="playSong(item)">
-          <div class="detail-content">
-            <div class="detail-num">
-               {{index+1}}
+  <div class="rank">
+    <Scroll class="rank-item" :data="rankList" ref="scroll">
+      <div class="scroll_contain">
+        <ul>
+          <li v-for="item in rankList" @click="selectSongList(item)">
+            <div class="item-content">
+              <div class="item_img">
+                <img v-lazy="item.picUrl" width="80">
+              </div>
+              <div class="img_text">
+                <h1>{{item.topTitle}}</h1>
+                <div class="song-item" v-for="(songItem ,index) in item.songList">{{index + 1}}<span class="song-name">{{songItem.songname}}</span>-{{songItem.singername}}
+                </div>
+              </div>
             </div>
-            <div class="detail-info">
-              <h1>{{item.data.songname}}</h1>
-              <p>{{item.data.singer[0].name}}</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-        <div class="topList-item-bottom"></div>
+          </li>
+        </ul>
+        <div class="item_bottom"></div>
       </div>
 
     </Scroll>
-
+    <router-view></router-view>
   </div>
-  </transition>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { getTopList ,getMusicList} from 'api/rank'
   import Scroll from 'base/scroll/scroll'
+  import {mapMutations} from 'vuex' // vuex语法糖
+
+
   export default {
     data () {
       return {
-
+        rankList: []
       }
-    },
-    computed: {
-      songList(){
-        return  this.topList.songlist
-      },
-      ...mapGetters([
-        'topList'
-      ])
     },
     created () {
-
-      /*this.$root.Bus.$on('itemid', data => {
-        console.log('id是' + data)
-        alert(data)
-      })*/
-    },
-    beforeDestroy () {
-      this.$root.Bus.$off('itemid')
+      this._getRankList()
     },
     methods: {
-      back(){
-        this.$router.back()
+      _getRankList () {
+        var _this = this
+        getTopList().then((data) => {
+          _this.rankList = data.data.topList
+        })
       },
-      playSong(item){
-       console.log(item)
-      }
-
+      selectSongList(item){
+        var _this = this
+        getMusicList(item.id).then((data)=>{
+          console.log(data)
+          _this.setTopList(data)
+        })
+       this.$router.push({
+          path: `/rank/${item.id}`
+        })
+      //this.$root.Bus.$emit('itemid',["123"])
+      },
+      ...mapMutations({
+        setTopList: 'SET_TOP_LIST'
+      })
     },
     components: {
       Scroll
 
     }
-
   }
 </script>
 
 <style scoped>
-  .rank-detail {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  .rank {
     background: #222222;
-    color: grey;
-  }
-
-  .header {
-    height: 44px;
-    text-align: center;
-    line-height: 44px;
-    color: dodgerblue;
-    font-weight: bold;
-  }
-
-  .back-inco {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border: 1px solid #ccc;
-    border-width: 1px 0 0 1px;
-    -webkit-transform: rotate(315deg);
-    transform: rotate(315deg);
-    top: 14px;
-    left: 7px;
-  }
-
-  .back-title {
-    position: absolute;
-    display: block;
-    left: 18px;
-  }
-
-  .detail-content {
-    display: flex;
-    padding: 0 0 0 10px;
-  }
-
-  .detail-num {
-    flex: 1;
-    color: grey;
-  }
-
-  .detail-info {
-    flex: 10;
-  }
-  .detail-info p{
-    margin:  10px 0 0 0;
-  }
-  .topList{
-    margin: 25px;
-  }
-  .topList-item{
+    width: 100%;
     position: fixed;
-    top: 44px;
+    top: 88px;
     bottom: 0;
-    left:0;
-    right:0;
+    color: grey;
+
+  }
+  .scroll_contain li {
+    margin: 20px;
+  }
+  .rank-item {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
   }
-  .topList-item-bottom{
+  .item_bottom{
     height: 50px;
     width: 100%;
   }
-  .slide-enter-active,.slide-leave-active{
-    transition: all 0.3s
+  .item-content {
+    display: flex;
   }
-  .slide-enter,.slide-leave-to{
-    transform: translate3d(100%, 0, 0)
+  .item_img {
+    flex: 1;
   }
+
+  .img_text {
+    flex: 3;
+  }
+
+  .img_text h1 {
+    margin: 0 0 0 10px;
+    font-size: 16px;
+    color: dodgerblue;
+    font-weight: bold;
+  }
+  .song-item {
+    width: 250px;
+    margin: 6px 10px 0 10px;
+    font-family:"微软雅黑";
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+  }
+  .song-name {
+    margin: 0 0 0 5px;
+  }
+
 </style>

@@ -33,4 +33,8 @@ vue+vuex+router+axios+jsonp+es6+stylus 目前还没用到vue的前端ui组件库
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test6.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test7.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test8.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test9.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test10.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test11.png)
+
 

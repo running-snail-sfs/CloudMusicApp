@@ -28,6 +28,12 @@ const mutations = {
   [types.SET_TOP_LIST](state, topList) {
     state.topList = topList
   },
+  [types.SET_BnagDan_LIST](state, bangDanList) {
+    state.bangDanList = bangDanList
+  },
+  [types.SET_Pic_Url](state, picUrl) {
+    state.picUrl = picUrl
+  },
   [types.SET_SEARCH_HISTORY](state, history) {
     state.searchHistory = history
   },

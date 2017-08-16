@@ -20,6 +20,9 @@ export const disc = state => state.disc
 
 export const topList = state => state.topList
 
+export const bangDanList = state => state.bangDanList
+export const picUrl = state => state.picUrl
+
 export const searchHistory = state => state.searchHistory
 
 export const playHistory = state => state.playHistory

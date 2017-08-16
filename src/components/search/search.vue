@@ -5,7 +5,7 @@
          <div class="back-inco" @click="back"></div>
        </div>
        <div class="header-right">
-         <div class="search-inco"><img :src="searchUrl" width="20px" alt=""></div>
+         <div class="search-inco"><!--<img :src="searchUrl" width="20px" alt="">--></div>
          <input type="text" placeholder="搜索音乐，歌手，歌词，用户" v-model="searchText"/>
           <div class="cancle" @click="cancleText">x</div>
        </div>
@@ -52,7 +52,7 @@
         isHot:true,
         isShow:true, //显示本地记录
         isShowSearchRes:false,//显示查询结果
-        searchUrl:require("common/img/search.png"),
+       /* searchUrl:require("common/img/search.png"),*/
         searchText:"",
         localContent:[]
       }

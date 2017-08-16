@@ -26,9 +26,9 @@ vue+vuex+router+axios+jsonp+es6+stylus 目前还没用到vue的前端ui组件库
 - [x]   实现数据请求延迟的lodding效果
 ## 运行截图
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test1.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test2.png)
+
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test3.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test4.png)
+
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test5.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test6.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test7.png)

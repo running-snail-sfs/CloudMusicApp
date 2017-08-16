@@ -11,6 +11,8 @@ const state = {
   currentIndex: -1,
   disc: {},
   topList: {},
+  bangDanList: {},
+  picUrl :"",
   searchHistory: loadSearch(),
   playHistory: loadPlay(),
   favoriteList: loadFavorite()

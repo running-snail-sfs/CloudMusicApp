@@ -3,7 +3,7 @@
     <Scroll class="rank-item" :data="rankList" ref="scroll">
       <div class="scroll_contain">
         <ul>
-          <li v-for="item in rankList" @click="selectSongList(item)">
+          <li v-for="(item,index) in rankList" @click="selectSongList(item,index)">
             <div class="item-content">
               <div class="item_img">
                 <img v-lazy="item.picUrl" width="80">
@@ -44,13 +44,16 @@
         var _this = this
         getTopList().then((data) => {
           _this.rankList = data.data.topList
+
         })
       },
-      selectSongList(item){
+      selectSongList(item,index){
         var _this = this
         getMusicList(item.id).then((data)=>{
           console.log(data)
-          _this.setTopList(data)
+          _this.setBangDanList(data)
+          localStorage.setItem("bangDanList",data);
+          this.setPicURL(this.rankList[index].picUrl)
         })
        this.$router.push({
           path: `/rank/${item.id}`
@@ -58,7 +61,8 @@
       //this.$root.Bus.$emit('itemid',["123"])
       },
       ...mapMutations({
-        setTopList: 'SET_TOP_LIST'
+        setBangDanList: 'SET_BnagDan_LIST',
+        setPicURL:"SET_Pic_Url"
       })
     },
     components: {
@@ -99,6 +103,7 @@
 
   .img_text {
     flex: 3;
+
   }
 
   .img_text h1 {

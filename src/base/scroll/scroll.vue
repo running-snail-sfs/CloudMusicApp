@@ -23,7 +23,11 @@
       data: {  // 从父类传过来得数据  可以这样写也可以是数组的形式
         type: Array,
         default: null
-      }
+      },
+      pullup:{  // 上拉刷新的扩展
+        type:Boolean,
+        default: false
+     }
 
     },
     mounted () {
@@ -47,6 +51,13 @@
             me.$emit('scroll', pos) //派发事件
           })
         }
+        if (this.pullup) {
+          this.scroll.on('scrollEnd', () => {
+            if (this.scroll.y <= (this.scroll.maxScrollY + 50)) {
+              this.$emit('scrollToEnd')
+            }
+          })
+        }
       },
       disable () {
         this.scroll && this.scroll.disable()
@@ -54,6 +65,7 @@
       enable () {
         this.scroll && this.scroll.enable()
       },
+
       // 刷新高度，重新计算
       refresh () {
         this.scroll && this.scroll.refresh()

@@ -3,7 +3,7 @@
 
 git clone https://github.com/jsonshao/CloudMusicApp
 
-cd MusicWebApp
+cd CloudMusicApp
 
 npm install
 

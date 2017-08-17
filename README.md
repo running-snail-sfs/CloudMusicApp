@@ -1,7 +1,7 @@
 ##  [我的博客csdn](http://blog.csdn.net/shao861210)
 ## 安装与运行
 
-git clone https://github.com/jsonshao/MusicWebApp
+git clone https://github.com/jsonshao/CloudMusicApp
 
 cd MusicWebApp
 

@@ -19,10 +19,10 @@
     </div>-->
     <div class="songs-info" v-show="isShow">
         <div class="singer-type">歌手分类</div>
-      <div class="hot-search" @click="addText">
+      <div class="hot-search">
         <p>热门搜索</p>
         <div><a :href="special.url" :class="{hotSinger:isHot}">{{special.key}}</a></div>
-        <div v-for="(item,index) in topList">{{item.k}}</div>
+        <div v-for="(item,index) in topList" @click="addText">{{item.k}}</div>
 
       </div>
       <div class="my-history">

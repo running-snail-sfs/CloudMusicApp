@@ -24,6 +24,7 @@ vue+vuex+router+axios+jsonp+es6+stylus 目前还没用到vue的前端ui组件库
 - [x]   实现歌手详细页面歌曲播放
 - [x]   实现歌单，歌手图片信息的懒加载问题
 - [x]   实现数据请求延迟的lodding效果
+..........
 ## 运行截图
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test1.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test3.png)
@@ -33,6 +34,6 @@ vue+vuex+router+axios+jsonp+es6+stylus 目前还没用到vue的前端ui组件库
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test8.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test9.png)
 ![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test10.png)
-![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test11.png)
+![image](https://github.com/jsonshao/MusicWebApp/raw/master/static/test12.png)
 
 

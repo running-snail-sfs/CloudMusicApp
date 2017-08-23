@@ -5,9 +5,9 @@
          <div class="back-inco" @click="back"></div>
        </div>
        <div class="header-right">
-         <div class="search-inco"><!--<img :src="searchUrl" width="20px" alt="">--></div>
-         <input type="text" placeholder="搜索音乐，歌手，歌词，用户" v-model="searchText"/>
-          <div class="cancle" @click="cancleText">x</div>
+          <div class="search-inco"><!--<img :src="searchUrl" width="20px" alt="">--></div>
+          <input type="text" placeholder="搜索音乐，歌手，歌词，用户" v-model="searchText" @blur="addLocalStorage" />
+          <div class="cancle"  @click="cancleText">x</div>
        </div>
     </div>
     <!--<div class="tab">
@@ -109,6 +109,26 @@
 
     },
     methods:{
+      addLocalStorage(){ // 保存搜索记录
+        if(!this.searchText){
+           return
+        }else{
+          this.localContent.push(this.searchText)
+          this.localContent=this.removeCopy(this.localContent)
+          localStorage.setItem("cacheText",JSON.stringify(this.localContent))
+        }
+
+      },
+      // 去除localContent数组中的重复数据方法
+      removeCopy(arr){
+         let newArr=[]
+        for(let i=0;i<arr.length;i++){
+           if(newArr.indexOf(arr[i])<0){
+             newArr.push(arr[i])
+           }
+        }
+        return newArr
+      },
        searchMore(){  //上拉刷新触发的事件
           this.isload=true
            this.page++
@@ -160,18 +180,23 @@
       },
       delCacheAll(){
         this.localContent=[]
-        localStorage.setItem("cacheText",JSON.stringify())
+        localStorage.setItem("cacheText",JSON.stringify([]))
       },
       delCache(index){
         this.localContent.splice(index,1)
+        localStorage.setItem("cacheText",JSON.stringify(this.localContent))
       },
       getLocalContent(){
-        var info=["张学友","薛之谦","张杰","周杰伦"]
-        localStorage.setItem("cacheText",JSON.stringify(info))
+        console.log("6666--"+JSON.parse(localStorage.getItem("cacheText")))
+        if(!localStorage.getItem("cacheText")){
+          localStorage.setItem("cacheText",JSON.stringify([]))
+        }
         this.localContent=JSON.parse(localStorage.getItem("cacheText"))
 
       },
       cancleText(){
+        //this.localContent.push(this.searchText)
+       // localStorage.setItem("cacheText",JSON.stringify(this.localContent))
         this.searchText="";
       },
       back () {

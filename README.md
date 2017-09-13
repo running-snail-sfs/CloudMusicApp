@@ -1,5 +1,5 @@
-# 18年应届小前端一枚，在求职的艰辛中蹒跚前进，但是心中依然有对未来的渴望......留个邮箱742410510@qq.com吧，万一理想实现了呢
-##  [我的博客csdn](http://blog.csdn.net/shao861210)
+# 18年应届小前端一枚，在求职的艰辛中蹒跚前进，但是依然相信奇迹的发生（742410510@qq.com）
+##  [我的博客csdn](http://blog.csdn.net/shao861210)
 ## 安装与运行
 
 git clone https://github.com/jsonshao/CloudMusicApp

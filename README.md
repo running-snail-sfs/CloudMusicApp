@@ -1,4 +1,4 @@
-##   我是一只小小鸟
+##   jaonshao
 ##  [我的博客csdn](http://blog.csdn.net/shao861210)
 ## 安装与运行
 

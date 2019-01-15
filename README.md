@@ -8,7 +8,7 @@ npm install
 
 npm run dev //服务端运行 访问 http://localhost:8080
 ## 技术栈
-vue+vuex+router+axios+jsonp+es6+stylus 目前还没用到vue的前端ui组件库，打算看下vux听说这个ui组件库挺好
+vue+vuex+router+axios+jsonp+es6+stylus+webapck 目前还没用到vue的前端ui组件库，打算看下vux听说这个ui组件库挺好
 ## demo实现功能
 
 - [x]   通过jsonp真实获取qq音乐的数据
